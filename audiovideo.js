@@ -6,9 +6,9 @@ const fs = require('fs').promises;
 const path = require('path');
 const ngrok = require('ngrok');
 
-const airtableApiKey = 'pat6Nz5K8KFmayJ33.c314d1add02eabeedc810805a3a9c9fe3408b11261dbf7d6db9fd3ba490b8eb0';
-const airtableBaseId = 'appTG873bj6H9Dsji';
-const airtableTableId = 'tbl59LkeRL5T5Bbxh';
+const airtableApiKey = '';
+const airtableBaseId = '';
+const airtableTableId = '';
 
 let ngrokUrl = '';
 
@@ -156,7 +156,7 @@ const port = 3001; // Changed from 3000 to 3001
 
 (async () => {
     try {
-        await ngrok.authtoken("2iioJ1JTcj3Uoii3FTdfy03GfAL_3DV8ceqUU7nJxJrS4L2fa");
+        await ngrok.authtoken("");
         ngrokUrl = await ngrok.connect({
             addr: port,
             region: 'us', // Specify a region if needed
