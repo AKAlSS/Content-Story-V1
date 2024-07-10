@@ -178,7 +178,7 @@ async function startServer() {
         ngrokUrl = await ngrok.connect({
             addr: port,
             region: 'us',
-            authtoken: '2iiwwuIzICTuorpLobpKhT2jZDH_7wXMuL4HzdmpEw3nYYRWK', // replace with your ngrok auth token
+            authtoken: '', // replace with ngrok auth token
         });
         console.log('\n==================================================');
         console.log(`Ngrok tunnel for fullvideo.js created successfully!`);
