@@ -118,7 +118,7 @@ async function startServer() {
         ngrokUrl = await ngrok.connect({
             addr: port,
             region: 'us',
-            authtoken: '2ifSprkMZimCVgDmKJL4pqmL5tx_3AxycRWe7uu51p8zvAsvU',
+            authtoken: '',
         });
         console.log('\n==================================================');
         console.log(`Ngrok tunnel for server.js created successfully!`);
