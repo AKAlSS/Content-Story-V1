@@ -1,0 +1,4 @@
+1
+00:00:00,000 --> 00:00:05,000
+Despite some minor issues, Claude 3.5 Sonnet represents a significant advancement in LLM technology.
+

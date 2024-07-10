@@ -1,0 +1,2813 @@
+in this video I'll show you how to
+completely automate the process for
+building faceless videos like this from
+scratch step by step complete with
+animated scenes voiceovers and captions
+exension plan never proceeded in 2018
+the project but before we start to build
+everything out in make and also air
+table let me show you how it works I've
+built out these four Separate Tables to
+separate our stories and our scenes and
+all of the different parts of a given
+scene and then another table here which
+allows me to get all of the videos and
+the images back from the API and then
+also a table here that actually allows
+me to Define different types of stories
+whether it's a comic news story or a
+story with photo realistic images or
+ultra realistic images from the future
+and I can use these different types of
+stories and Define different types of
+prompts to generate different stories
+and images to produce different types of
+output for the story generator so that
+just gives me a lot of flexibility to
+change the output of the video and the
+style without having to go into the
+automations and tweak all of these
+individual nodes to change anything so
+the way it would start is I would create
+a new row in the system I would pick
+which type of story I want to create in
+this case I'm just going to pick another
+comic news story but again we could pick
+photo realistic to generate something
+more like this but for the demo here
+I'll pick the comic then you would
+simply upload a source in my previous
+example I simply grabbed a news article
+I'll copy and paste that again and then
+once you have these two items defined
+all you have to do is hit this check box
+that says ready to go once you do that
+it's going to trigger this automation
+here going to do several different
+things this is going to generate the
+story and the different scenes and all
+of the different parts you can see it
+just generated the story if I jump over
+to the scene you will notice that for
+each story it breaks it up into multiple
+scenes and then for each Scene It Breaks
+it up into multiple parts and the way
+this automation works is that you can
+actually generate still images and you
+can automate those as videos or you can
+actually produce the animated video and
+use that instead and I'll show you how
+to use both options so now we can see
+where the system is now working on story
+15 that's the one we just added here and
+so you can see it has already generated
+all of the different scenes and then it
+has started to create three different
+image prompts for each part of the story
+and so if we jump back here once it has
+generated the story and has also
+generated all the scenes then it will
+start to create the images and animated
+videos for each different scene and then
+as those images and videos are generated
+from
+leonardo.da here you can see we now have
+the three videos for this particular
+scene so now it will start to generate
+the audio it will also assemble the
+video from these three separate parts
+and that happens right here where it
+takes the three different parts and
+assembles it into one large video with
+the tool Json to video that's this
+platform right here and then down here
+it generates the audio and then after it
+creates the audio and the video it will
+merge them together into a final audio
+and video file that completes the entire
+scene and then it will continue to BU
+build out all of these different pieces
+until it is completely done all of the
+different parts the audio the video and
+then the merged version and then once
+we've merged the audio and video for
+each different scene then it'll be able
+to take all of these and produce the
+final video and then that final video
+will be produced and dropped right here
+so you can see now we have all of those
+complete and if we back out and look at
+the last automation that ran we can see
+here that it went through and it grabbed
+all of the different scenes together and
+made one final call to Json to video to
+produce the final video with the
+captions so that'll take just a minute
+or two to produce and so now we have
+that final video it looks like from
+beginning to end it took about 10
+minutes so I'm going to show you how to
+build out this entire aor table database
+from scratch We'll add each of the
+different tables here all of the columns
+and we'll also build out this entire
+automation from scratch step by step and
+in this automation here where we
+generate the images I'll show you how to
+either just use a still image just like
+these or how you can turn those still
+images into these automated images now
+if you want access to the make.com
+blueprints so that you can just upload
+that blueprint and have the automations
+ready to build out just like that as
+well as a full built out air table base
+make sure to jump into my new community
+the no code Architects it's an active
+place there's already 250 members asking
+questions and helping each other out and
+in the classroom you can get access to a
+lot of my templates including the air
+table base and the make blueprints all
+right so let's get started building this
+out first I'm going to go ahead and
+create a brand new air table base we'll
+start it from scratch go ahead and close
+this window here and then I'm just going
+to going to delete these initial Fields
+I could rename them but I'm just going
+to get them out of my way I'm going to
+rename this table to
+stories and I'm going to rename this
+here to all
+stories then I'm going to change this
+main column here to a auto incrementing
+field I'm going to name it the story ID
+I'm going to change the field type to
+Auto number go ahead and click save and
+then the next thing I'm going to do is
+I'm going to start to build out some of
+these other tables that we are going to
+need there's quite a few things that we
+need to add here to make all this work
+so we might as well jump into the deep
+end so now I'm going to create a linked
+record to the other table that we need
+to build so it's automatically going to
+build that out for us so we'll create a
+new table in this case I'm going to go
+ahead and create the story types we're
+going to turn this off allow linking to
+multiple records create the field now
+it's created that field for us going to
+go ahead and rename this to story
+types go ahead and click save now we can
+come back to stories then I'll go ahead
+and add the next linked field we'll call
+this one scenes every story can have
+multiple scenes again we're going to
+pick link to another record create new
+table we'll leave this one on because
+every story will have multiple scenes so
+we want to allow linking to multiple
+records we'll go ahead and create that
+field now we've got our scenes table now
+I'm going to go ahead and create a long
+text field we're going to call this one
+the source this is where we're going to
+drop in our source article to create the
+story from go ahead and create that
+field now I'll go ahead and create a
+another field this one we'll call the
+story this is where we'll drop in the
+new newly created story from chat GPT
+we'll make this one a long text as well
+go ahead and create the field next I'm
+going to jump back over to story types
+and then I'm actually going to move
+scenes over here into this position here
+and then I'm going to jump back over to
+story types I'm going to go ahead and
+build out the remainder of this table
+now because we need some of the columns
+here in order to complete the stories
+I'm going to rename this view to all
+story
+types and then I'm going to rename this
+column here to story
+type then I'm going to add another
+column here going to call this story
+prompt text and this will be a long text
+I'm going to go ahead and create that
+field so we'll use this to create the
+prompt and then we'll add another column
+here to store where we generate all the
+different scenes so we'll call this
+scenes Json prompt and I'll explain why
+I have this word Json here in a moment
+we'll go ahead and create the field and
+now I need to create four additional
+columns these columns are going to
+define the width and height of the
+images that we created and then the
+final video that we output we'll need
+these values in a bunch of different
+places throughout the automations so I'm
+going to go ahead and create these all
+four of these will be a number zero
+decimal places and no thousandth
+separator output width create field then
+I'm just going to duplicate this a
+couple times make it a little easier and
+then we can change each one of these so
+this will be output
+height and then we'll have the image
+
+width and then we'll have the image
+
+height and we'll go ahead and click save
+and now I'm going to go ahead and add
+one story type for the comic news this
+is a linked field so we don't actually
+put anything here in fact I'm going to
+hide it from this view now I'm going to
+start to format this table a little bit
+I'm going to make it an extra tall row
+height and then I'm going to adjust
+these a bit so I can see more and then
+I'm going to go ahead and copy in my
+prompt so this is the prompt we'll use
+to create the actual story ENT tells
+Chad GPT to read the article above and
+we'll insert that we tell at the context
+you're a tech news reporter let's create
+a 20w factual review of the article and
+we're just explaining everything that
+needs to happen you can go ahead and
+copy of the rest of it just like this
+next up we need to add the scenes Json
+prompt I'm going to copy that and paste
+that in just like this as well what this
+is going to do is it's going to create a
+Json object that we can use in our
+automations for looping that contains
+the narrative and then also all of the
+AI image prompts that we need just to
+make the easier for you I will link to
+these two prompts in the description
+below so that you don't have to waste
+time trying to read and copy this
+directly into air table and then finally
+we need to define the output width and
+height of our video in this case I'm
+going to make a horizontal YouTube video
+so the width will be 1920 by 1080 and
+then we need to put in the image width
+and height for our image generation tool
+Leonardo you can obviously see that
+these dimensions are smaller than our
+output but they are the same aspect
+ratio and we do need these values in
+here in order for Leonardo to properly
+process our request so now I'm going to
+come back over to stories and now I
+should be able to select a story type in
+this case I will have just one the comic
+news and so now that we have the story
+types I'm going to go ahead and pull in
+the values that we added into this table
+here so that we can have them inside the
+story table so if we come up to this
+little carrot here we're going to add
+lookup fields and we are going to add
+all of these fields to this table and
+then we can add those six Fields I'm
+going to quickly model ify them and just
+take off this section here it just tells
+you that this lookup column came from a
+different table here just going to go
+through each of these and remove that
+just not necessary to have almost
+done one more to
+
+go and there we go so now you should see
+that when we select a specific news
+story it automatically pulls in the
+values from that table we have our story
+prompt our scene Json prompt and the the
+output width and height and the image
+width and height so before I try to
+finish the storage table I'm going to
+jump over to the scenes I'm going to
+rename this here to all data and Fields
+I'll explain why I'm doing that later
+this view here is going to show us every
+single column with no filters and then
+once we build it out then I will create
+other views with a limited view of data
+and columns and I'll change the name
+then but it's sometimes it's nice to
+have a view that just can see everything
+especially when we're building things
+out so first I'm going to come up here
+to this main column and rename it to
+scene ID then I'm going to add another
+text field here long text called scene
+this is where we can put the narrative
+for each scene then I'm going to create
+another field here called AI image
+prompts again we'll use long text AI
+image prompts create the field looks
+like I got an X in there real quick pull
+that back out now just for readability
+this is linking back to the stories
+table but it's a one-way linkage so any
+given scene is only going to be linked
+to one story so I'm going to rename this
+column on this side of things to story
+and then I'm going to turn this off
+allow linking to multiple records
+confirm that change now I need to go
+ahead and create another table here it's
+going to be our fourth and Final Table
+this is where we're going to store all
+of the images or videos that we create
+using the Leonardo API so I'm going to
+go ahead and create another column I'm
+going to link to another record I'm
+going to go ahead and create a new table
+I'm going to call this the video API I'm
+going to leave this enabled allow
+linking to multiple records you can see
+now that we have our new table I didn't
+give it a name so I'm going to come over
+here quickly going to rename it video
+API go ahead and click save now I'm
+going to come here and rename this
+column to job ID we'll leave it as a
+single line text I'm going to add a
+attachment and I'm going to call it
+video we'll go ahead and create the
+field and then each one of these records
+can only attach itself to one specific
+scene so I'm going to change this edit
+the field going to take off the S and
+also this here which allows it to link
+to multiple records confirm the change
+and then I'm going to move this table
+right here as it's more associated with
+the scenes table here and then we can
+continue to build out our table so the
+next thing I'm going to do is I'm going
+to add a lookup table from this column
+here we just added it as we add in new
+videos from Leonardo they are going to
+be linked up to this particular record
+and I want to be able to pull in those
+videos from this table so I'm going to
+come up here we're going to add a lookup
+field we are going to pull in the video
+here we can add the field now because we
+will have multiple videos for each scene
+I'm going to rename this column to
+videos and I'm going to remove this
+extra text here videos now I need to add
+three more columns which are going to
+help us determine when this entire scene
+is complete we will make three API calls
+for each different scene that will
+create three different videos and so we
+need to count how many videos we
+requested and how many videos are
+actually complete and then finally a
+column that will tell us when they're
+ready so here I'm going to add a new
+column this is going to be a count and
+I'm going to call this num videos and
+for the source we are going to use the
+video API so that's counting how many
+linked records we have here let's go
+ahead and create that field then I'm
+going to go ahead and duplicate it and
+I'm going to change this to completed
+videos and to do that we are going to
+add a condition here and we are going to
+change this to video which is now
+looking at this column here when it is
+not empty not empty and then we can go
+ahead and click save and so this column
+here is counting how many records we
+have linked and then this column here is
+actually telling us how many videos have
+actually been uploaded into our a table
+system and now we need one more column
+that's going to tell us when they are
+equal so now I'm going to make a column
+called ready we'll use this formula and
+you can copy this just like that make
+sure you copy it exactly as I have it
+here including this closing parentheses
+and then create the field you'll notice
+it's saying that there's an unknown
+field name called completed videos and
+it's because I called it complete videos
+so I'm just going to fix it here click
+create field then I'm going to rename
+this column here completed videos and
+then go ahead and save it accept the
+change and then that will automatically
+update the formula for me I'm also going
+to add another formula
+field sometimes we need this sometimes
+we don't but I just like to add it in
+case I do record ID and then for the
+formula you can just start to type
+record ID and then this is going to come
+up you can select it you do need to
+finish it with a closing parentheses and
+then create the field I'm also going to
+add a created and last modified Tim
+stamp sometimes that's helpful for
+debugging last modified time it'll
+automatically fill in the field names
+now we've got to add a few more
+attachment fields for the audio the
+compiled video and then the merged audio
+and video so I'll create an attachment
+call this audio then I'll just go ahead
+and duplicate it a couple times and then
+rename them so this will be the combined
+video remember we're going to create
+multiple videos for for each scene so
+we'll combine those videos into a single
+video and then finally we will merge the
+audio and video into
+
+one we'll go ahead and save that and
+then finally we need to add a few lookup
+Fields here from the story itself
+remember in the story we pulled in the
+output width height image width and
+height from the story type now we need
+to pull that same value through to the
+scenes from the story which was
+originally coming from the story type so
+I'm going to jump back to scenes and
+then go to the story add lookup Fields
+then I'm going to add the output width
+and height and the image width and
+height so hopefully you're seeing how to
+structure a database and Link together
+different fields and to pull in
+different fields that you need into
+other tables and then again I'm going to
+go ahead and rename these and remove the
+extra text here that was added to show
+us where the data came from
+
+G to go to each one of these and do the
+same
+thing come here final
+one click save all right so that
+finalizes this view here I'm going to go
+ahead and add in a new grid here just
+going to call it all scenes create new
+and move that to the top here now in
+this view I'm going to go ahead and
+group it by the story that way all of
+the scenes are grouped together with the
+story and then I'm going to hide a bunch
+of the fields because we don't need them
+I'm going to start and just hide all
+Fields I'm going to enable the scene the
+AI image promps the videos the audio
+video and the merged version the created
+and last modified date and then also the
+column ready so that we can see when the
+completed videos matches the number of
+videos that we have and then I'm just
+going to rearrange these a little bit
+I'm going to put the created down here
+last modified I'll move the ready to
+here I'm going to shrink the screen just
+down a little bit so we can see a bit
+more now we can see the scene ID the
+scene itself the prompts all of the
+videos that we've generated from the AI
+the audio the audio voice over the
+completed video the merged and whether
+it is ready and this actually should go
+right here and I'll make this a little
+bit smaller and then in preparation for
+later I'm going to add a new section
+just going to call it automations this
+is how we're going to trigger different
+things and I'll add a section for scenes
+put this here I'll add another section
+for other add this here move automations
+right here so I'm back in stories now
+let's go ahead and add the lookup tables
+that we need from the scenes table we
+want to pull in all of the videos that
+we create so that we can assemble them
+and build that final video so here we
+can come up to the scenes going to add a
+lookup field we're going to scroll down
+and add the audio and video version so
+from the scenes table we are going to
+pull in the finalized merged audio and
+video version of the scene I'm going to
+go ahead and rename it and just pull off
+the extra text that they add go ahead
+and and click save now here as well I'm
+going to add a few other records we're
+going to have a ready to go checkbox
+that we can use to fire off the initial
+automation create field and I'm going to
+create a done checkbox that we can use
+to clear out done
+
+videos
+done create the field as always I'm
+going to add a record ID just in case I
+need it
+formula record ID again you can type
+record ID close the
+
+parentheses create field now just like
+we created a ready field in the scenes
+table we need to do the same in stories
+so we need a column that calculates how
+many videos we should have by how many
+scenes we have and then how many are
+completed by how many videos we actually
+have here in the audio plus video so I'm
+going to add a new column we'll call it
+num scenes and we'll do a count and we
+will count the number of scenes we'll go
+ahead and create that field then we'll
+go ahead and duplicate this duplicate
+here we will rename it to completed
+scenes and so to complete just the
+completed scenes we need to enable this
+here and change this to the audio and
+video where it is not empty then we can
+go ahead and click save and then we can
+add a ready column this is going to be a
+formula and then you can copy this in
+just as I have it here and then you can
+go ahead and create that field and then
+finally just for reference I'm also
+going to add a created and
+modified created
+time and modified
+time and I use this just for debugging
+it makes it a lot easier so with that
+our storage table should be complete
+let's go ahead and do some final touches
+and then we can move along to the final
+automations I'm going to create three
+new sections here just to prepare for
+the next phase I'm going to call this
+one other I'm going to call this one
+stories and this one automations I'll
+put this all stories here I'm going to
+duplicate it and call this one all data
+and Fields that way we have a field that
+just always shows us everything it's
+good for debugging and in all stories
+here I'm just going to rearrange things
+here and I realized that there's one
+other column we need to add so we've got
+the story type and we can put in the
+source and then it's going to generate
+the story so let's bring that over here
+we don't need to see the actual prompts
+here so I'm going to go ahead and hide
+those same with this one here the Json
+prompt going to remove and when I say
+remove I mean hide we don't need to see
+the heights here and the dimensions so I
+will hide those as
+
+well we don't need to see the actual
+links to the scenes here I'm going to
+hide that we don't need to see the
+combined audio and video although maybe
+if we're debugging it it'll be nice to
+have that so I'll leave that and make
+this a little bit smaller make this one
+a little bit
+bigger I'm going to put ready to go
+right here we don't need to see the
+record ID I'm going to remove numb
+scenes completed scenes we'll leave the
+ready the done and the created and last
+modified I'm going to shrink the story
+ID down a little bit move this down a
+little bit one thing we do need to add
+is the final video so I'm going to come
+up to this carrot here I'm going to add
+to the right I'm going to add an
+attachment and here we are going to type
+video we'll go ahead and create that
+field do some minor adjustments here
+just to make things a little bit easier
+to see you can do the same on yours all
+right so now we're in good shape to move
+on to the actual automation and build
+this all out if we missed anything in
+the air table buildout then we can add
+that in as we go but I think we have
+pretty much everything we need and if
+you're enjoying this video make sure to
+like And subscribe to the channel it
+tells me what type of content you want
+more of all right so let's jump into the
+automations now I'm going to build them
+out trunks this is the section that
+builds the story and the scenes then
+we'll move on to the section that builds
+out the animated images and still images
+then this section here assembles the
+various videos that we created into the
+full scene and also the audio this
+merges the audio and video and then this
+finally builds out the entire full video
+all right so let's start here I've got a
+blank automation here I'm going to go
+ahead and rename this just so I can
+start to build it out content Story
+magic demo I'll even just save it and
+then I'm going to jump back to air table
+real quick and update the base name
+content Story magic demo and so for the
+first step here we need to generate the
+story and then from the story we need to
+generate all of the different scenes and
+then for each scene we need to generate
+the different AI image prompts that will
+be assembled together to build the
+videos and so on so I'm going to go
+ahead and remove this row here we don't
+need it I'll jump back to stories I'm
+going to delete these to test rows and
+if you want to use the same Source
+material that I'm using in My Demo here
+you can find it at the same place where
+I linked up the story prompt and also
+the story Json prompts so I believe this
+orally came from CNN I'm going to go
+ahead and cut and paste that into there
+and then I'm going to go ahead and
+adjust the height of these columns so
+that we can see a bit more now here's
+where we need to start to build out some
+additional views that will allow us to
+trigger our new automation I'm going to
+go ahead and create a air table node
+here that allows us to watch for
+responses this is actually a web hook in
+disguised and it's just going to give us
+a URL that we can call from Air table to
+trigger this initial process process the
+one that we're going to build out right
+here so go ahead and add you can click
+save it's going to give us a URL go
+ahead and click okay just so we don't
+lose anything I'm going to come back to
+air table I'm going to come down here
+and I'm going to create a new grid I'm
+going to name this
+grid generate story and after we create
+one or two of these then we can just
+start to copy them and we don't have to
+take so much time I'm going to move that
+new grid into automations and then I'm
+going to adjust the filter here so that
+only certain rows will enter this view
+we don't want just any record coming
+into this View and generating a request
+to make we only want specific ones so
+first and foremost we want to make sure
+we have a source so I'm going to say
+source is not empty and then I only want
+a row that has no story so once we've
+generated a story we definitely don't
+want it showing up in this view so I'm
+going to change that to story is empty
+and we also want to make sure that we
+gave it a story type remember we have
+these story types here we want to make
+sure that we have apply that so that we
+know the given prompt and the Json
+prompt that we need to use those are
+associated with the story types remember
+we Define those here so back here again
+I'm going to add another condition where
+the story type is not empty and then
+we're going to add one more which is
+ready to go is checked notice that the
+row that we had here fell out of the
+view because that is not checked now
+next I'm going to jump into the
+automation section here I'm going to
+create our first automation add a
+trigger when a record enters a view
+let's go ahead and name it now I'm going
+to call it generate story and then we're
+going to update the table to stories and
+the view is generate story so now when a
+new row enters this view it's going to
+generate a trigger which will then allow
+us to run an Automation and in this case
+we are going to run a script I'm going
+to cut and paste some code here in just
+a second but before I do that we do need
+to add an input variable record ID and
+then we can add a column and this data
+that we're adding here is from
+this step here so we're referencing the
+a table ID of this row that comes into
+view here in our script so again I'm
+going to come back to edit code and add
+this here so in that trigger I need to
+pull in this record ID here so I'm going
+to erase this line here and insert this
+code here what this code is going to do
+is simply call the remote web hook that
+we are creating on this side so I'm
+going to come back here I'm going to
+copy this address to clipboard and add
+it here into the code make sure you
+follow the case that I'm using on this
+variable name here it does matter record
+uppercase i lowercase D we copied in the
+URL and then notice here we are also
+passing an action equals generate story
+that way we can Branch off in our
+Automation and only perform the action
+we need for any given call at this point
+I should be able to finish editing I'm
+going to jump back to data real quick
+I'm going to go ahead and Mark ready to
+go if I come back to generate story we
+should have that row here now so if I
+come back to the automation I should be
+able to choose a record because that is
+now in the view I should now be able to
+come to this script and Trigger that but
+first before I do that I'm going to come
+to this Automation and run it once come
+back to a table we'll test that action
+we should see that pop through here that
+just came through so if we open up this
+little bubble we are going to see the
+record ID from that row and then also
+the action generate story so from that
+we can now create a route that will only
+operate off of that particular action
+We'll add a router here we are going to
+add a filter the condition is going to
+be the action and is going to be equal
+to generate story make sure you spell it
+the same way go ahead and click okay for
+now I'm going to go ahead and delete
+this module now this particular action
+is going to perform two different
+actions so I'm going to add a another
+router it'll come here it'll do the
+first action and then it'll come through
+and do the second one so the first thing
+that we're going to do is we're actually
+going to pull up the full record here we
+only have the record ID we don't have
+any of this data yet so we need to pull
+that up so I'm going to do that here I'm
+going to go to air table we're going to
+get a record here you will need to
+create a new connection to your air
+table base go ahead and go to add
+connection type ooth
+content Story magic demo save you'll
+want to add a base content story here's
+my demo here make sure you grab the
+right one go ahead and Grant access
+it'll select that connection and you can
+continue pick your base in this case
+we're going to grab the table stories
+and for record ID we are going to use
+the record
+ID from this module here you can go
+ahead and click okay then we need to add
+a chat GPT completion this is going to
+generate our story create a completion
+if you don't already have a connection
+you'll need to add a connection to your
+open API account for model I'm going to
+use system 40 and then we will add a
+message for roll we'll use user and so
+for the message content we are going to
+use our source which is our source
+article and then we will want to add our
+story prompt text make sure to expand
+that and grab the actual message here
+and not the array you can go ahead and
+click okay for Max tokens you can just
+pick zero and click okay now if you'd
+like you can go ahead and add an airor
+Handler sometimes this is good I use The
+Brak module if you try to execute too
+many connections at once this will rerun
+it later without having to restart I'll
+go with five and one and then you can
+add a filter here for the condition
+you'll use the message and you'll want
+to say contains 429 then you can click
+okay you can move that down and then add
+the next step we just simply need to
+update the story row with the story that
+we generated here go to air table update
+record make sure you pick the connection
+content Story magic demo you're going to
+have to update your permissions to also
+write just go through that same process
+add base pick the same demo that you're
+using Grant access then you've picked
+the base table stories for the record ID
+you're going to use the same record ID
+from the original request and you're
+simply going to drop the result of that
+GPT into the story you can add the
+result you can come down here and click
+okay you can go ahead and click save now
+because we are using the brake module
+here and you are going to get a warning
+because we are using the air handling
+here it's just telling us that we need
+to enable incomplete executions in order
+for this to work go ahead and click save
+but you can come down here to the Gear
+right here you'll say allow storing of
+incomplete executions go ahead and click
+okay again you can click save you won't
+get that warning this time and then you
+can go ahead and align everything to to
+fix the alignment and then from here we
+can build out the other Branch let's go
+ahead and look up the record again here
+we're going to go to air table get a
+record pick the correct connection the
+right base table stories again the
+record ID is from the original step
+click okay now we're going to create a
+another chat GPT completion create a
+completion select the connection model
+I'm going to go ahead and use 40 again
+as well we're going to create a new
+message roll is user message content
+this time we are going to use the scenes
+Json prompt and this time we're going to
+use the actual story that we generated
+in this step here for Max tokens you can
+go ahead and put zero come down here to
+show advanced settings for response
+format you can move this to Json and
+then you can go ahead and click okay now
+again if you want you can add an error
+Handler break attempt it five times with
+a minute break in each interval add a
+filter message contains 429 which again
+is the error code for too many requests
+you can move this down next up we need
+to parse the response from chat GPT so
+we're going to add a Json module right
+here parse Json and we're going to pass
+it the result right here go ahead and
+click okay let's go ahead and save
+everything it's going to give you a
+warning that a Transformer should not be
+the last module you can save anyway and
+then let's go ahead and run this again
+it's going to give you a warning just
+click run anyway and then let's come
+back to air table come back to our
+Automation and let's go ahead and test
+this action again jump back to make so
+we can see it run it got past our filter
+created the story updated the story
+let's double check to make sure the
+story is there notice that it fell out
+of this generate story section because
+it was looking for an entry that had no
+story if we come back to all stories we
+now see that we have the actual story
+then we loaded up that story and send it
+to CAD GPT let's look at the output
+let's look at the result so inside this
+Json that we asked chat GPT to create we
+have the narration plus the AI image
+prompts and then we sent it to parse
+Json so if we look at the output there
+now we can see that we have broken it
+down into make so we can use these in
+the next steps so that's looking good
+let's keep going now we just need to
+create an iterator in a couple more
+steps so I'm going to add an iterator
+here and we are going to iterate over
+the pairs so we can go ahead and just
+select that there and then click okay
+now we need to convert using a Json
+module transform to Json each of these
+values into a string that we can write
+to air table go ahead and click okay so
+next we need to create a new row in the
+scenes table that is linked up to the
+story which is going to create the
+scenes for the story so however many
+scenes that we generated from chat GPT
+it's going to create one new row for
+each scene and then it's going to drop
+in the image prompts for each scene
+because for each scene we break up that
+scene into multiple different parts so
+if we have one scene it might have three
+different images associated with it so
+we'll come here we'll go to air table
+we're going to create a record again
+make sure you pick the right connection
+the right base content Story magic demo
+table in this case we're going going to
+pick scenes you're going to leave the
+scene ID blank for the scene we are
+going to use the original this is the
+narration and then for AI image prompts
+we are going to use the Json string that
+is coming from this transformation you
+want to make sure to grab that that is a
+object here we need to grab the actual
+string double click that it'll add it
+right in here at the story you want to
+make sure you link it back to the
+original story we're creating these new
+rows but they need to link to the story
+here so here you're going to add in the
+record ID of the original story which is
+this record ID here you can go ahead and
+click okay you can now click save
+actually we need to run this here so
+it's waiting for a connection and then
+we can test that trigger again in the
+generate story automation it's going to
+come through it's going to come through
+this filter it's going to create the
+story again now it's going to create
+that Json again except this time it is
+going to parse it and then iterate
+through and create the scenes with the
+image prompts so you can see here if we
+open this up and we look at the pairs we
+had six different scenes each scene has
+multiple image
+prompts here so it created six different
+rows so if we come back to air table and
+then we jump over to the scenes for this
+story here we have six different scenes
+and now we have the AI image prompts
+that we can use when we send those to
+Leonardo so now we're in good shape we
+can move on to the next branch make sure
+you're saving as we go all right so now
+that we completed the story generation
+and the scene generation now we can
+continue forward with the section that
+actually generates the AI images and the
+video images now in this case we're
+going to start with just the image
+generation and we're going to complete
+the entire automation with just still
+images and then at the end we'll make a
+slight tweak to add in the animated
+videos that are created from that still
+image so back in a table I am noticing
+one issue that I just spotted right now
+is this column here we need to tweak it
+it is a text field it needs to be an
+auto number field so I'm going to edit
+that and then I'm just going to change
+this to Auto number and then we'll click
+save you can go ahead and confirm the
+change and now we can continue forward
+we've got our three scenes with all of
+the prompts and we're in good shape to
+move forward so now I'm going to jump
+back to our Automation and we are going
+to create another route and then I'm
+going to go ahead and just start to
+align this as I go to make it easier to
+work on and so the next thing we need to
+do is we need to trigger another event
+and then load up the scene to start
+working through the AI image prompts so
+I'm going to go ahead and create an a
+table module here we're going to get a
+record again you need to pick the right
+connection and this time instead of the
+stories we're going to grab the scenes
+and the record ID is again going to be
+the record ID that we get in this module
+here record ID you can go ahead and
+click save and then you're going to want
+to add a filter here so that we only
+filter on the correct action in this
+case we are going to add the action and
+here we're going to type generate scene
+videos and then you can go ahead and
+click okay okay go ahead and click save
+now let's come back to air table and now
+we're going to need to create a new view
+to trigger off of so let's create a new
+grid we'll call this generate scene
+videos create new view we can drag this
+into the automations now we need to add
+some filters so that only the rows that
+we need to create Images for show up in
+this view we're going to add a condition
+where scene is not empty add another
+condition where AI image prompts is not
+empty so again we want to make sure we
+have the voice over and then also the
+image prompts before we process this and
+then we also want to make sure that
+there are currently no videos so that we
+don't trigger the same thing twice so
+here we're going to video apis is empty
+we have a scene we have the prompts but
+we do not have the videos yet or images
+in this case and again just to reiterate
+I'm using this table here to either
+store still images to build the faceless
+video from or anim videos that are
+created from that still image so even
+though it says video API it could be
+still images or animated videos
+depending on what part of the automation
+we are working on right now so now we
+have six rows that are coming into this
+automation here so now we need to
+trigger those and send them over to
+make.com so I'm going to come here and
+duplicate this automation that we
+previously built I'm going to change
+this to generate scene videos and then
+I'm going to change this here from the
+storage table to the scenes table and
+then we need to change the view here to
+generate scene videos and then we should
+be able to choose a record we should see
+six different records here I'm going to
+go ahead and pick the first one and then
+I'm going to jump into the script here
+we need to make one minor change for the
+most part we can cut and paste this it's
+going to be going to the same location
+but we do need to send a different
+action so here I'm going to change this
+to generate scene videos and then I'm
+going to come up here and click finish
+editing I'm going to jump back over to
+the automation I'm going to just make
+sure again that it's saved I'm going to
+run it once I jump back to air table
+then we will test the action and now we
+should see that come through to our
+automation it passed our filter and then
+it was able to get that scene from Air
+table so now we can continue on building
+this out so in this next step here we
+are going to parse a Json we're going to
+use the Json module parse Json and for
+the Json string I'm going to copy this
+from my template make sure you respect
+the upper and lower case here you can
+type that in since I'm cutting and past
+thing I've got to fix that broken
+variable it was from my other Automation
+and then I'm going to replace it with
+the AI image prompts that's all we need
+there we can go ahead and click okay all
+right so now that I have the Json module
+here I'm going to go ahead and save it's
+going to give us a warning I'm going to
+go ahead and save anyway and then just
+go ahead and run this once again I'm
+going to ignore the warning and then I'm
+going to trigger this from Air table
+again go ahead and test the action from
+the generate scenes video it's going to
+trigger through it's not going to load
+up that Json so now that we have some
+sample output that we can use now I can
+continue on with the automation we're
+going to add the iterator right here and
+now for the array value we can go ahead
+and add in this here we can go ahead and
+click okay and now we can go ahead and
+add in the
+Leonardo module here we're going to
+generate an image now I already have my
+connections but I'm going to walk you
+through how to set them up we're going
+to need one for the Ste images and then
+when we Circle back later we'll need a
+different one for the animated videos
+and before I do that I'm going to come
+back over to air table and I'm going to
+create a new automation I'm going to
+rename this to Leonardo a image we're
+going to receive the web Hook from
+Leonardo here so I'm going to go ahead
+and click see all win web hook received
+and now I'm going to go ahead and copy
+this so that I have it when I create my
+key now do keep in mind that when you
+add your billing information you want to
+make sure you buy credits in the API
+don't buy it for the regular interface
+as if you were working through the web
+portal you want to make sure you buy a
+subscription that has API access down
+here and then you can go ahead and
+create a new key we're going to call
+this the content story Magic Image key
+and you're going to add this web hook
+callback URL right here just add that in
+from Air table and then you will go
+ahead and generate that key then you can
+come here and copy that key come back to
+the automation you're going to add that
+here add that to your API key make sure
+to call this the image
+key so we know that it's the image
+versus the animated video go ahead and
+click save it's going to connect for the
+prompt you'll want to use this value
+from the iterator here for the model go
+ahead and type Kino this is the model
+I'm using here you can experiment with
+this another time there's lots of
+different options here to create
+different types of images for number of
+images go ahead and put one for Source
+you can leave that blank but you're
+going to want to expand this here you
+can go ahead and make sure that your
+images are not public for height you're
+going to select the image height not the
+output height output is for the final
+output size of the video we create in
+this case we are passing through the
+image size that we want Leonardo to
+create so go ahead and pick the image
+height and then pick this inner value
+here one and then for the width you're
+going to pick the image width expand
+this and again pick that little value
+right there accidentally put it here so
+I'm going to delete that make sure it
+has the open and close bracket come down
+to width image width and then you can
+scroll down and just make sure you pick
+the SD version number two and then you
+can go ahead and click okay and go ahead
+and click save so now that we have our
+Leonardo module I'm going to go ahead
+and create an additional step we're
+going to create a row in air table
+create a row again use the same
+connection pick the base for the table
+this time we are going to pick video API
+again we are going to use the same table
+for whether it's still images or an
+animated video for the job ID you want
+to use the image generation job ID for
+the scene you can add this we're going
+to use the scene that we triggered from
+this original state here which is this
+module down here module one record ID
+and we don't actually have the still
+image or video yet even though we made
+the call to Leonardo and it continues on
+to create the row in this video API
+table to track that video and ultimately
+save it it takes a little time for
+Leonardo to actually generate that image
+and so when it's done it's going to use
+this call back that we added and it's
+going to send that here to this
+automation and then we can finish this
+out here so I'm going to go ahead and
+click okay I'm going to go ahead and
+click save I'm going to go ahead and
+click run once I'm going to jump back to
+air table I'm going to go to this
+automation here generate scen videos and
+I'm going to trigger this once here
+we're going to see that patch through go
+through and now leonar is going to
+create that image and then it's going to
+start looping through and creating the
+rows so if I jump back to air table to
+the data we now see that we have a job
+and now we have a second job and it'll
+soon have a third job but again no video
+correct so now we're just going to jump
+back to the automations we're going to
+go to this automation that we created
+with the web hook and as long as you set
+up your API correctly with the web Hook
+when you come back to air table you
+should start to see that there is a
+request coming through you can always
+test the trigger but what you're going
+to see here is the data from Leonardo
+coming through to air table so next up
+I'm going to add a script here and now
+the value that I'm dropping in here is
+also in that same place that I gave you
+the prompts earlier that you you could
+cut and paste simply just cut and paste
+that code directly into this script and
+click finish editing then you can
+continue on with the automation here I'm
+going to go find records and then we are
+going to use the video API table you're
+going to find records based off of
+condition then you're going to add a
+condition you're going to say where the
+job ID change this to
+is go ahead and come to the Gear go to
+Dynamic now you can select this little
+plus you're going to select from when
+web hook received you'll come into the
+body scr scroll down to the data then
+you come into the object and then you'll
+pick this object ID here click that
+object ID then you should be able to
+test the action it should find a row
+next you can add a step update record
+for table you're going to pick the video
+API table for record ID you will use the
+record ID from find records scroll down
+pick record ID then you're going to
+update the fields choose field video
+you'll use the little plus again we're
+going to use the data from the web hook
+received into the body scroll down to
+the data into the object then you will
+scroll down until you find the url of
+the image you'll need to go into images
+and from there you scroll down you'll
+pick this URL here then you can do run
+as configured run test should update the
+record and if I come back to the data
+you'll see that it updated the last
+record and it's the last record because
+it got three web hook calls but we only
+were able to process the last one during
+testing so now we have that image and
+now what we can do is we can come back
+to automations and we can turn on this
+web hook so that from now on it'll run
+automatically then we can also jump back
+to our automation we can do a run once
+waiting for a new request jump back to
+air table going to go to generate scene
+videos I'm going to test action here
+jump back to make you should see that
+pop through got past the filter now it's
+looping through the different prompts
+it's generating image number one and
+while these are running I'm going to
+jump back to air table jump back to the
+data and I'm going to delete these
+original three rows don't delete any of
+the new rows that it's adding here but
+these original Three that it created in
+our previous test I'm going to delete
+those delete all and then if I jump back
+to the automation here to the Leonardo
+image Automation and I look at the Run
+history we should see those three
+entries coming through one already ran
+successfully so if I jump back to the
+data we're seeing those images starting
+to come through looks like there's one
+that hasn't fully finished then there it
+is so like I said we're going to start
+here we now have our images for a single
+scene looks like we're about halfway
+through like I said I'm going to come
+back through after we finished the rest
+of the automations where we build the
+entire video using the still images I'm
+going to come back through and then
+we're going to do one more Leonardo API
+call to create the animated images and
+then we'll just run the same process
+again with those but for now we are
+ready to move on to the next Automation
+and if I do come back here to air table
+you will notice that now there is only
+five rows in the automation section
+where we generate the scenes because we
+now have all three images for this scene
+here and so now you can see here it's
+mapping those three still images here
+and it's also marking this column ready
+to move to the next step so then if you
+had all of your automations on including
+the make automation all of these things
+all of these scenes would be processed
+as well but let's now move on to this
+next section here which is going to
+generate combined video from the three
+still images right here using Json to
+video.com and then also using 11 labs to
+build out the voice over that will be
+added to that video so now if we jump
+back to air table we have one row that
+is ready so now we can create a new view
+for the next automation let's come down
+here and create a new grid view we'll
+call this build scene audio plus video
+create that new view we'll move that up
+here into the automations for this
+filter we are going to make sure that
+ready is equal to one so now we have one
+row here and then there's one other
+condition that the audio and video
+combined file is
+empty that way it doesn't run multiple
+times now we can come up to the
+automation I'm going to put all of our
+web hooks at the top and then I'm going
+to duplicate this view here best to dupc
+duplicate this one and not this one
+because this revolved around stories and
+here we are continuing to deal with
+scenes so there's just fewer things I
+need to change so I'm going to duplicate
+this here I'm going to change this to
+generate
+scene Audio Plus video I'm going to
+change my trigger the table stays the
+same scenes but I'm going to change the
+view to build scene audio and video and
+then I'm going to change the code here
+we can leave this the same but we do
+need to change the action to generate
+scene audio video then we can go ahead
+and click finish editing then I'm going
+to jump back to the automation I'm going
+to create a additional route here I'm
+going to go ahead and auto align this
+route will also call another router so
+I'll go ahead and build that now an
+additional router with two spots I'm
+going to align that and then I'm going
+to add the filter here again we're going
+to use the action that comes through
+from the web hook action and we will
+name it
+generate scene audio video we'll come
+down here to okay I'm going to go ahead
+and click save want to make sure you're
+doing that periodically let's go ahead
+and run that once let's jump back to air
+table and let's trigger to make sure
+everything's functioning looks like it's
+trying to test two steps because I
+didn't find an additional row here first
+so I'm going to jump back to step number
+one choose record should only be one row
+because there's only one row that's
+ready jump back to step two here going
+to go ahead and test that action jump to
+make should see that pipe through here
+go through the correct path it looks
+like it would have continued we've got
+the green check mark so now we can start
+to build out these two automations so as
+always the first thing I need to do is I
+need to go to a table and get the record
+that we are working with you're going to
+pick the correct Connection in my case
+the content Story magic demo pick your
+base pick your table scenes and for
+record ID we'll use the record ID from
+this step here record ID go ahead and
+click okay then we need to build out an
+iterator we're going to Loop through the
+different images that we've created open
+iterator and here we are going to use
+the videos array make sure you grab the
+entire array and don't pick audio or
+video make sure you grab videos go ahead
+and click okay and now we're going to
+create a Json so go ahead here to Json
+and create Json and to make this a lot
+easier we're going to add a data
+structure and we're going to call this
+Json
+to
+video part and then we're going to click
+here and click generate and then for the
+sample data you can find this in the
+same document that I provided to you to
+find the prompts and the other variables
+go ahead and make sure you use the Json
+to video part copy that directly here go
+ahead and hit generate it's going to
+generate this here all you have to do is
+come down here to save and then once
+that's there you can add an element and
+now we can fill in the variables here
+for Source you'll want to grab the URL
+from the iterator which is iterating
+through the videos variable that's in a
+table here which are these here if for
+some reason this isn't coming up make
+sure you just save it and reload it but
+it should be there go ahead and click
+the URL for your source for type we are
+going to Type image a little later in
+the video we're going to come back and
+rename that to video when we use the
+animated videos for Zoom you can go
+ahead and put two what that's going to
+do is slightly zoom in on each still
+image to give it some motion for width
+here we are going to start to use the
+output width and output height instead
+of the image width and height so make
+sure you use the output height open this
+up and grab the within that for the
+height you are going to grab the output
+height number one for duration because
+it's an image we're going to go ahead
+and put 5 Seconds that means we are
+going to sit on each image for about 5
+seconds and for position you're going to
+type center dash Center and now you can
+go ahead and click okay and then you can
+save it's going to give you a warning
+but you can save anyway now you can
+continue on with the automation we're
+going to add another Json in this case
+we are going to parse the Json and we
+are going to use the string from the
+previous step this Json string go ahead
+and click okay and then you can close
+out the iterator with the close iterator
+for the source module you'll use this
+iterator here in my case it is 34 now
+because this automation hasn't run
+before it looks like it's not giving us
+the elements that is coming out of this
+step here so go ahead and click okay go
+ahead and click save it's going to give
+you a warning save anyway go ahead and
+run that module ignore the warning run
+anyway jump back up to air table jump
+into the automation make sure you're in
+generate scene audio and video and then
+and you can test that action jump back
+to make should patch through and it
+should finally create that value so that
+you can come in here and now you should
+be able to select elements click okay
+now we need to create an additional Json
+go ahead and add another module create
+Json this time we're going to add a new
+one we're going to call it Json to video
+scene and we're going to again go to
+generate and for this we are going to
+use this block of code here just copy
+that entire piece from the doc that I
+provided to you into the sample data
+click generate it's going to generate
+this structure here you can go ahead and
+click save now we can add in the
+different fields that we need to for the
+ID here we are going to pass in the
+scene ID that we are working with so
+that when Json to video is done
+processing that video in a similar way
+that Leonardo called air table with the
+finished image js on De video is going
+to send us the final video and so we
+need that ID to link it back and find it
+in air table so here for ID we are going
+to use the record ID from the initial
+module for FPS we can just put 25 leave
+cache and draft empty for width we are
+going to again use the output width open
+this up and select the inner value for
+height you're going to use output height
+again open it up and use the inner value
+I accidentally added it here go ahead
+and delete that if you did the same come
+down to height go inside that variable
+if you made a mistake make sure you have
+the open bracket and closing otherwise
+just start from scratch and do it again
+height output height now for the scenes
+you're going to click this little map
+button and it's going to give you a
+place that you can just simply add in a
+field once you click in here you're
+going to add this entire array so what
+we did is we basically looped through to
+create the three elements for our scene
+and now we need to tell Json to video
+what those scenes are this is the final
+Json that we need to create for them we
+created a Json with the scenes and now
+we're inserting that into into the
+master build request now we're going to
+expand exports and again here for
+destinations and now be very careful
+when you type this it's very important
+that you get this right you are going to
+type here web hook and then for content
+type you are going to type app location
+SL Json just like this application SL
+Json and for the endpoint we need to
+create a new web hook inside of air
+table so I'm going to jump back to air
+table and I'm going to create a new
+automation I'm going to call this Json
+to video scene I'm going to create a new
+trigger I'm going to go to see all and
+I'm going to Wi a web Hook is received
+then I'm going to copy this web hook
+back into the automation here at that
+end point for Quality I'm going to put
+high for resolution I'm going to put
+custom and everything else can be left
+as is settings and elements everything
+else here is good to go so I'm going to
+go ahead and click okay and now in this
+final step we need to make the call to
+Json to video so I'm going I'm going to
+go to http you can type HTTP here we're
+going to make a request for the URL you
+can copy this as it is here for the
+method you're going to move that to post
+for the headers you're going to add in
+x- api-key you will need to create an
+account and get access to your API key
+you'll copy your API key into the value
+here for body type you are going to use
+raw for content type you are going to
+select application SL Json for the
+request content you're we're going to
+use what we built in the previous step
+Json string and you want to parse the
+response go ahead and click okay
+everything should be good I'm going to
+go ahead and save that request and then
+I'm going to go ahead and run once I'm
+going to jump back to air table I'm
+going to move my triggers back up to the
+top I'm going to keep my web hook
+triggers up at the top and then my air
+table triggers down here I'm going to
+re-trigger this automation here to spark
+this here it's making the call to Json
+to video open this up we have a status
+code 200 we know that was successful so
+I'm going to jump back to air table and
+fairly shortly if I jump back to the
+Json to video scene once that video has
+completed it should give us some data
+here that we can use to build out the
+rest of the automation I'm going to test
+the trigger here if you don't see
+anything right away it means Json to
+video is processing your video you can
+always go to Json to video and look at
+your render log they will show you the
+videos that they are working with looks
+like they did finish it so if I come
+back to air table and we test the
+trigger again now it looks like we have
+that request back from them I can go
+into the body there it is there's the
+video and now I can simply create the
+next step which is to update the scene
+again we're going to use the table scene
+remember in the previous step we passed
+the record ID to Json to video and now
+inside of air table they passed it back
+to us so if we come back here to the
+plus and we use the data from the web
+hook we go into the body we can scroll
+down and we look for ID there's the ID
+the record ID and now all we need to do
+is update the video here
+with the URL from Json to video so we
+can use the blue checkbox again go into
+the body scroll down there's the asset
+there and we can move run as configured
+and we can run the test and before I
+jump back to test it I'm going to go
+ahead and turn this one on I'm turning
+on all the web hooks now I will turn
+these Triggers on when we are done I'm
+going to jump back to the data and now
+we have that video here I can open this
+up and play the still images notice
+there's a slight Zoom should switch
+every 5 Seconds
+slight Zoom it's just still images at
+this time another 5 seconds and it moves
+to the next image so we are good to go
+there the final thing we need to do is
+generate the audio so I'm going to jump
+back to the Automation and we'll build
+out this second phase here I'm going to
+go ahead and just clone this because
+it's a similar
+module I'll remove this double check
+everything is correct we're just loading
+up the same record that we did did here
+and now we're going to generate the
+audio with 11 Labs 11 Labs we're going
+to create a speech synthesis I'm going
+to go ahead and use the atom voice here
+for the model I'll use 11 multilingual
+version 2 for the text we are going to
+use what's in the scene this is the
+voice over we jump back to air table
+quickly we'll see the scene here with
+the voice over we can leave the rest of
+these as is we'll go ahead and click
+okay we can go ahead and move on I'm use
+Google Drive to save the generated file
+from 11 Labs going to upload a file I
+have a temporary directory that I'm
+going to use folder location just going
+to select this here I have a trash
+folder that I use for temporary files so
+I'm going to select that and then you
+can map it to the file from the previous
+step just like that you can also enter a
+specific ID if you create a folder and
+just grab the ID from the URL you can do
+it that way in this case I'm just going
+to select from the list and grab my
+temporary trash folder and click okay
+now I'm going to create a shared link so
+that I can upload it to air table Google
+Drive scroll down I'm going to get a
+share
+link wasn't sure what that error was
+just cleared that out for the file ID
+I'm going to use the previous step file
+ID you want to make sure that the type
+is anyone is a reader allow file
+discover you can leave that off go ahead
+and click okay now all we need to do is
+drop that file back into air table going
+to go to air table we're going to update
+a record pick the right connection go to
+the right base then we're going to grab
+the table we're going to use the scene
+and this time we are going to update the
+audio so you can go ahead and add
+another item for the file URL you can
+use the web content link make sure you
+use the web content link and for the
+record ID again you can use the record
+ID that had triggered the entire process
+from the very beginning in Step number
+one go ahead and click okay then you can
+go ahead and Trigger this one time and
+then we can come back to air table we
+can can go to the automation we can go
+to generate scene audio video we can
+test this process jump back to the
+automation should see it come down
+through here it's going to call Json a
+video one more time then it's going to
+go through the process of generating the
+audio and then updating air table if I
+jump back to air table we go to the data
+we now have the Audio I should be able
+to open this up and play it in a high
+stakes cover up burglar executed LA's
+most so it's just reading here from the
+scene so there we go we have that next
+piece in play the next section we need
+to build out is right here which is
+going to merge the audio and video
+together into one file we're going to
+call Json to video to do that work and
+then it's going to drop that merged file
+right here first I'm going to create
+another view we're going to call this
+merge Audio Plus video we're going to do
+create new view we'll move this up to
+the automation section here for the
+filter we want to make sure a video
+exists so we will search for
+video make sure not to grab videos video
+is not empty and audio is not
+
+empty and then we want to make sure that
+the audio video is empty this one here
+is empty and now only rows that are
+ready to process for this new automation
+will run we're going to jump back let's
+come to our automations let's go ahead
+and duplicate this automation we'll
+rename it to
+merge audio and video we'll come to the
+trigger we'll change the view we can
+leave the table as is but we're going to
+change the view remember I'm copying
+from this section here cuz this one was
+connected to stories so we'll change
+this to merge audio and video choose
+record and we'll choose the record
+that's there now I'm going to jump over
+to the script I'm going to make a quick
+edit here we can leave everything pretty
+much the same except I need to change
+this to merge audio video merge audio
+
+video merge audio video finish editing
+now I'm going to jump over to the
+automation I'm going to create a new
+route going to go ahead and align that
+going to add the filter condition action
+we'll update this to merge audio and
+video and click okay and now as always
+we need to load the record I'm going to
+go ahead and clone this again just to
+speed things
+up although when I did that it messed up
+the filter which is a pain redo that
+real quick careful about that that's a
+downfall I should have cloned it first
+action merge audio video we'll go ahead
+and click okay now we need to create a
+Json create a Json in this case I'm
+going to do an add I'm going to rename
+this to Json to video merge audio and
+
+video I'm going to click here generate
+from the document I'm going to go here
+to Json to video I'm going to grab this
+section here I'm going to copy that
+going to jump back to the sample data
+I'm going to drop that in there then I'm
+going to go ahead and click generate
+it's going to generate the Json for me
+I'll go ahead and click cck save again
+here for the ID we are going to add in
+the ID from this module here in the
+beginning record ID FPS we can put 25 we
+can leave the cash and the draft alone
+for the width we're going to use the
+output width open it up grab the inner
+value for the height we're going to go
+ahead and grab the output height inner
+value now we're going to go ahead and
+add scenes and we're going to have two
+elements here we're going to add element
+one and element two for the source
+you're going to open this up and add the
+source of the video first so here's the
+video you're going to open that up and
+you're going to grab the URL for type
+you're going to type video and for
+duration you're going to put minus 2 and
+what the minus two does is it tells Json
+to video to limit the length of the
+video to the audio so the audio is going
+to be the master in terms of determining
+the length of this new video then we're
+going to go to the source of the second
+element here and this time it's going to
+be the audio we're going to grab the URL
+I accidentally added that to the
+duration so I'm going to erase that and
+make sure I'm in the source of item two
+going make sure I didn't delete the
+duration here going to go to audio URL
+type going to go ahead and type audio
+for duration you're going to add
+negative one which tells Json to video
+that we are using the full length of the
+audio as the master length so for
+Quality I'll type high and actually for
+cache and draft go ahead and just put no
+and and for Quality put high for
+resolution put custom and then the last
+thing we need to add is the exports add
+an export then you'll add a destination
+for type you're going to type web hook
+for content type you're going to put
+application SL Json and now we need a
+new endpoint for this new operation so
+let's come back to air table we can go
+ahead and copy this Json to video scene
+make sure not to copy this one let's
+copy this one here we'll duplicate it
+let's rename it to Json to video audio
+plus video then let's come here to the
+web hook let's grab this URL come back
+to our automation we'll drop that in the
+endpoint here then we'll come back to
+air table we're not going to be able to
+finish this until we actually have a
+value here it'll automatically fix
+itself once we do or we'll have to clean
+it up either way so I think everything
+is good here I'm going to go ahead and
+click okay and real quick I'm going to
+jump back to this previous Json and just
+also put cach equals no and and draft is
+no as well that's in the previous Json
+video I'm not entirely sure what those
+do but I noticed they were in mine so
+I'm going to go ahead and just put those
+we'll go ahead and click okay so now we
+should be able to move on to the final
+call here just to make things easier I'm
+going to go ahead and clone the previous
+Json to video web call use it here go
+ahead and open this back up everything
+should be good except you'll notice that
+the request content is broken so you'll
+fix that with the contents of what we
+have here Json string go ahead and click
+okay you can go ahead and click save you
+can go ahead and click run now let's
+jump back to air table we need to
+trigger this and get a video coming
+through the system to finalize so I'm
+going to jump back to our trigger here
+merge audio video we already updated
+this here I'm going to test the action
+jump back to make created the Json let's
+see if our request was successful status
+code 200 that's good jump to Json to
+video Let's see if it's rendering our
+video so that's running so as soon as
+that's done running then it will trigger
+that web hook so now that that's done we
+can jump back to air table jump into to
+the Json to video audio to video web
+hook jump into step number one looks
+like something came through just a
+second ago you can always test the
+trigger again it's going to grab the
+most recent web hook we can see inside
+the body looks like it fixed our
+automation so once we come in here the
+scene it's already finding the record ID
+and it's updating the video although
+this is the wrong field to update make
+sure you change this you want to change
+this to the field which is Audio Plus
+video and then we're going to update
+this this here jump into the body of the
+web hook scroll down grab the URL going
+to run as configured here and then you
+can run the test and then I'll turn this
+back on going to leave the actual
+triggers off but all of our web hooks I
+just turn those on as we build them jump
+over to the data notice that that row
+left the view here because we added the
+video and now if I jump over here we
+have the completed scene so I'll go
+ahead and play that in a high stakes
+cover up burglar executed LA's most so
+that looks good so jump back over to
+make let's just make sure everything is
+saved and now at this point what we want
+to do is really trigger the rest of the
+process so that we have the completed
+merged audio and video for every single
+scene to finally finish the final video
+and do the last automation that we need
+to build right here which is going to
+take all of those scenes and build one
+final video and also add the captions
+right so in order to do this what we
+need to do is we need to trick the
+system into triggering again so now what
+I'm going to do is I'm going to go ahead
+and turn on all these automations
+they're working as expected and now one
+way we can kind of trick this system is
+to come back to the data I'm going to go
+back to scenes I'm going to go to the
+build scenes because we haven't even
+built the scenes yet for these we've
+only generated the videos this section
+here for this one row so I'm going to
+come to build scene and audio actually
+I'm going to come to generate scenes
+right so now here's the problem is that
+these have been been sitting here and
+they're no longer going to trigger
+anything so I'm just going to come up
+here to the filter and add something
+just to get rid of it so I'm going to
+add scene and I'm just going to put
+something unreal here click okay
+continue so everything disappears I'm
+going to turn this automation on now if
+it ever asks you to process all data
+just go ahead and delete old data start
+it from scratch are you sure you want to
+delete the old data yeah and during
+testing it's better all I really want is
+all of our new data if there's anything
+sitting in there I don't want that there
+I'm going to back out you have to back
+out so that you can kind of see if
+things are running correctly now I'm
+going to jump back into air table double
+check that I turned on these automations
+okay and then I'm going to come here to
+generate scene videos and I'm going to
+remove this fake filter here
+everything's going to pop back in at
+once and it's going to trigger all of
+those automations over here so we should
+start to see a bunch of automations
+running as expected now one thing that I
+didn't do is while this is running I'm
+going to jump into the make automation
+actually I'm going to edit it cuz it's
+possible we give too many requests to 11
+Labs so I'm going to add an erir Handler
+here real quick a break number of
+attempts five intervals between just one
+and then I'm going to add a little
+filter here
+message
+contains 429 just so I don't overload it
+click okay save and then back out again
+so we can see here do we have all of our
+automations running now looks like they
+all left here so they must be generating
+images so we're waiting for those images
+to come through now just to kind of
+follow along here everything popped out
+of this view because when this
+automation ran here it created the rows
+it created the video objects right here
+for our Leonardo Steel images and
+because it did that they no longer show
+up here because remember we had to have
+the video API table had to be empty so
+if we jump up to the automations and we
+go to the Leonardo image and we should
+see yes see we have a bunch of processes
+coming from Leonardo and it takes them a
+little bit longer because we added this
+little script here which is just a delay
+so the automation for Leonardo runs
+pretty quickly and it can cause this
+interesting condition in air table where
+there's a raise condition this
+automation fails so I have that little
+break in there that's why I added this
+little time delay but if we jump back to
+data and look at the video apis these
+are all starting to pop through now so
+now if I jump back to the scenes we've
+got all of our scenes now and so now you
+can tell that the automation is
+continuing to run if I jump back to make
+now it's generating the Json to video
+video and the audio so those are coming
+in as well the videos now it should be
+running to merge these for all of the
+ones that we have complete and those are
+starting to come through now as well so
+that's a good sign and then once these
+are all complete then we can do the
+final automation which is going to build
+the final video here so these are all
+complete now and if we jump over to the
+stories we're also seeing that it's
+ready as well because remember we built
+those fields that calculate for every
+scene do we have an equivalent number of
+audio and video files so now what we're
+going to do is we're going to finalize
+this automation we're going to add one
+more route here which is this one right
+here which is going to grab all the
+scenes and build the final video plus
+add captions and we'll test that through
+and then after that after we have it
+completely working we'll jump back to
+this step here with Leonardo and we'll
+turn the still images into a animated
+video and then we'll rebuild the whole
+thing with animated videos instead of
+these more still like images here so you
+might just want the still images or you
+might want the animated videos but I'm
+going to show you both options so that
+you can try them both out and see which
+one you like better and then of course
+it would be totally possible to swap out
+Leonardo for another image generator of
+course as well so I'm going to go here
+and auto align everything I'll go ahead
+and save it and then we can continue on
+all right so let's finish this out we
+got one main automation to get done if
+you're still here working through this
+and if everything's working you are
+awesome let's just keep going so now we
+are in a situation where we have all the
+scenes built for a specific story we
+have all of the audio and video
+necessary so now we need to jump back to
+the stories and we're going to see here
+that it is ready so now we need to
+create a new view for the next
+automation which is going to merge and
+build out all the scenes going to come
+down here let's create a new view we'll
+call this one build full
+video we can create the new view we can
+move this into the automation section
+here and for the filter we are going to
+want to make sure that the ready is
+equal to one and that also the
+video is empty which it should be so now
+we have one row here waiting to be
+finished now I'm going to jump back to
+the automations this time I'm not going
+to duplicate any of the triggers that
+were used to trigger for scenes I'm
+going to go back to the story one here
+and duplicate that one cuz that one's on
+the story table update this to build
+full video jump up to the trigger table
+should be stories but the view is build
+full video let's go ahead and choose a
+record we should have one record here
+let's go ahead and update the script
+edit the code all we have to do here is
+change the action to build
+full video build full video finish
+editing now I'm going to come back to
+the Automation and I'm going to add
+another route going to go ahead and
+align everything as always we need to
+get the row the story you can't grab any
+of these these were the scenes so I'm
+going to come back to the top here I'm
+going to clone one of these and add this
+actually I can delete that move this
+going to update the filter action
+should
+be build full video then we can go ahead
+and click okay align everything again
+and now we just need to build out that
+final automation that looks just like
+this so first we need that iterator so
+we'll add the iterator here so we need
+an array here we're going to Loop
+through the audio and video array which
+is full of all of our different scenes
+we'll click okay then we'll go ahead and
+create a Json just like we did before
+create Json in this case we are going to
+use the the parts one that we've already
+created so for the data structure you
+can open this up and you look for the
+Json 2 video Part I have two of them
+because I created one for the demo and
+one for myself add the elements for the
+type it's going to be video for the
+source we're going to use the URL from
+the iterator make sure that's video for
+the source use the URL duration is going
+to be -1 that just means we're going to
+use the full length of the video we're
+not going to cut it short for position
+we're going to put Center
+Center it just centers the video with
+their video that they're creating so
+moving on from the position center
+Center we're going to move into the
+height click into height then you're
+going to do output you're going to
+expand that and use the inner value for
+output height and then click into width
+use the output width use the inner value
+for that as well for Zoom we've already
+done the zoom on the individual scenes
+so we can leave this at zero then you
+can go ahead and click okay then here we
+are going to parse the Json so we can
+parse it parse Json we're going to use
+the output from this previous step here
+Json string go ahead and click okay and
+then we are going to close the iterator
+we're not going to have all the values
+that we need so I'm going to run the
+Automation in just a second here's the
+iterator source module is going to be
+this here which looks like 50 for me
+it's going to be something different for
+you and then for now because I don't
+have the values yet in this dropdown
+from this section here I'm going to go
+ahead and click okay I'm going to click
+save it's going to give me a warning go
+ahead and click through to that go ahead
+and run this once it's going to give you
+another warning War run anyway then jump
+back up to air table can't remember if I
+already pulled in a record we're going
+to choose a record Story number three
+and jump back to this and we're going to
+test the action jump back to make should
+pipe through to this final section here
+you can see here it looped through the
+six different scenes and built the Json
+so now we should be able to finalize the
+aggregator here so now that that has run
+we can select parse Json elements you
+can select that you can go ahead and
+click okay and now we need to create one
+more Json which is going to take
+everything that we created here all the
+scenes elements so now we need to create
+one more Json here before we send it to
+Json to video where we take the elements
+that we created in this iterator and we
+combine them with everything that we
+need for that final video so I'm going
+to go ahead here and create a Json
+create Json and for this one we're going
+to create one final data structure you
+can go ahead and click add we're going
+to call this the Json to video
+
+full video we can come here to generate
+and then in the text that I shared with
+you you can grab this entire section
+here from the build full video just make
+sure you grab the entire thing copy
+you'll add that to the sample data click
+generate that's going to build out
+everything here then you can click save
+and now we can simply fill in this
+information here and we'll be done for
+the ID we're going to use the ID from
+the original call here the record ID FPS
+we can use 25 cache I'll go ahead and
+use no and no and width we're going to
+use the output width the inner value for
+the height we're going to use the output
+height the inner value right here so
+make sure you've got those correct for
+the scenes we can go ahead and turn this
+on here this is going to use the array
+from the iterator here for exports you
+can go ahead and add a new export and
+then you'll add a destination for type
+you're going to type web
+hook for content type you're going to
+type application SL Json and then for
+endpoint we need to come back to air
+table we're going to create a another
+endpoint for Json to video you can go
+ahead and clone and duplicate one of
+these duplicate let's rename it to Json
+to video full video and for the web hook
+you click into this and then just copy
+that come back to make put that into the
+mpoint for Quality you can use high
+resolution you can use custom for
+elements you go ahead and add a new
+element this is going to allow us to add
+in the information for the captions for
+the different values that you can use
+for their captions you can go to their
+main website and look up the docs and
+just see what they have available so for
+type we're going to put
+subtitles for language I'm going to put
+Ian all caps I'm just going to use all
+caps for position I'm going to use mid
+bottom center puts them in the middle at
+the bottom near the center for the font
+size I'm going to use 75 for the font
+family I'm just going to use this one
+luckiest guy that's the one that they
+used original
+and for the outline width I'm going to
+go with five you can change all that
+stuff later make sure to check for no
+spaces any of that kind of thing you
+don't want any empty spaces the scenes
+comes from here we got the width and the
+output height I'm going to go ahead and
+click okay then I'm going to go ahead
+and clone one of these other modules
+that we used previously for Json to
+video stack it right at the end here
+just need to jump in there and fix the
+broken value that's going to be in the
+request content for what's in the
+previous step here this Json string then
+you can click okay then you can go ahead
+and click click save and now we are
+pretty much all the way through I'm
+going to go ahead and run this once so
+that when I jump back to air table and I
+jump to our new trigger here build full
+video pretty sure we already chose a
+record then I'm going to test the action
+jump back to make real quick it's going
+to send that to Json to video Let's just
+double check the status code we have a
+status code 200 that means if I jump
+over to my dashboard and look at my
+renders we should see that final video
+being built out that's running this
+one's going to take a little bit longer
+than the previous ones because it's
+stacking together all of the previous
+scenes together to build one final long
+video all right so now that it looks
+like it's done I'm going to jump back to
+air table and to jump into our new
+trigger looks like something came
+through just a second ago but you can
+always test the trigger as well if it's
+not coming through it means that
+something in your Json isn't correct
+with the URL maybe something is
+misspelled with web hook or application
+Json so now we need to update the table
+from scenes to stories we're updating
+the main story at this point so this is
+going to break fields down below make
+sure you remove the Broken Field it was
+able to recover and use the record ID
+from the body so that's good so now we
+just need to change the field we're
+going to look for the video and then we
+can go ahead and come in here to the
+body scroll down to the URL add that run
+as configured here run the test now
+before I jump back I'm going to just go
+ahead and turn this trigger on jump back
+to the data notice that the row is gone
+now if I jump back to all Stories the
+full video is here now and if I watch
+that it's going to be the full video
+that we generated from Json video in a
+high stakes cover up burglar executed
+LA's most sophisticated cash Heist
+amassing a whopping $ million not going
+to watch the whole thing looks like it
+came out to about a minute you can see
+it's zooming in on each individual image
+it's got the captions and then the AI
+voice generation from 11 Labs so there
+we go the final thing to do now would be
+to Simply come up to the automations and
+then do a final test let's turn this
+automation on and then we could just
+simply come back to the data we could
+come back to all stories I'm going to
+scroll all the way over to the left here
+I'm just going to add a new row I'm
+going to add the story type comic news
+then I'm simply going to copy the source
+from this one into the same section here
+first make sure that this automation is
+on make sure it's saved and then I'll go
+ahead and just do ready to go and I
+should be able to come back here and it
+should start to execute the story gener
+generation and then the scene generation
+we should be able to kind of bounce back
+and forth between air table and make so
+we see the story is here if we jump over
+to scenes we should see it generate the
+additional scenes in just a second here
+there are those scenes coming through
+and then that should be triggering the
+image generation so we see that going
+off now as well creating new video API
+rows and as those are created these
+should drop out of this view here so
+these are all getting created so now if
+we jump back to the automations and we
+jump into the Leonardo doai image run
+history now we see all those getting
+created as well again they're going to
+pause for 25 seconds just to avoid a
+possible bug and race condition that can
+happen between air table and Leonardo so
+once that 25 seconds passes they'll
+pretty much all just run all at the same
+time so pretty quickly here we'll see
+all of these start to turn to Green
+they're going to populate in no specific
+order now starting to ramp up here as
+they all finish out and then as these
+scenes complete it's going to trigger
+off the process to build the audio and
+video we jump back over to make is
+starting to create the videos and also
+the AI image and also the AI voiceovers
+we're starting to see all of the audio
+pop in and the video is starting to come
+in from Json to video once we have a
+pair here we're going to see that Branch
+off to start to create the merged audio
+and video versions and then once all of
+those are ready we should see this ready
+tick to to one it just moved to one so
+now it should be running that final
+automation to create the final video
+which is a 200 so that's good so it's
+just rendering that final video right
+now if I open this refresh that's
+running and so that's just going to
+finish out just like it was before with
+this final full video web hook that's
+going to update air table with the final
+video so while that's finishing in the
+background let's go ahead and start to
+think about updating the automation to
+use the animated videos instead of the
+still images so if you notice here in
+our videos it is all still images in a
+high stakes cover up burglar you see a
+little motion but it's just simply
+because I did a little bit of a zoom
+when I rendered the videos together and
+it doesn't look like
+this which actually has this movement
+here in the video which is a feature
+from Leonardo that takes the still
+images and converts them into a anim
+video so this is going to continue out
+it looks like it's still rendering yeah
+still Runing let's go ahead and tweak
+this automation to do the animated
+videos instead of the Ste images so in
+order to do that I'm going to come here
+so after we create this still image I'm
+going to go ahead and add a module here
+a router a router here and I'm going to
+have one route in case we want to do the
+still images and then one route in case
+we want to do the video images and so
+here I'm going to add a filter which is
+going to make it impossible to move
+forward I'm going to put if 1 is equal
+to two which never happens so it's no
+longer going to execute this path and
+this will just allow us to swap back and
+forth as we want and so now what we need
+to do here is we need to make one more
+API call to Leonardo to create the
+animated video so to do this I'm going
+to add a Leonardo module this time we're
+going to make a custom API call and I
+need to add a new connection we do not
+want to use the connection that we added
+for the still images because that's
+going to call the wrong call back
+remember if I come back to air table and
+we go to the automations we have this
+automation here that's waiting for a
+call back for the Ste images and in fact
+I'm going to turn this one off we don't
+need it anymore and I'll just simply
+come down here and create a new
+automation I'll move it to the top I'm
+going to call this
+Leonardo a video I'm going to come down
+here to see all when web hook received
+and then I'm going to come here and copy
+that and now I'm going to jump back over
+to Leonardo I'm going to add a new API
+key I'm going to call this one the
+content Story magic video key and I'm
+going to erase what is here this is the
+web hook that it's automatically adding
+that I don't want I'm going to remove
+that and I'm going to add the new web
+hook that I just copied out of air table
+for this one here that is right here I'm
+going to go ahead and generate that key
+I'm going to copy the key right here I'm
+going to jump back to make I'm going to
+add a new key I'm going to call this the
+video key I'm going to add that key here
+go ahead and click save for the URL you
+can go ahead and copy this into your
+automation for the method we're going to
+use a post this header should have been
+added for you but if not you'll need to
+add a header with the key content type
+and value application SL Json and then
+you can cut and paste this from the
+document that I gave you you will need
+to change this place holder as when you
+copy it it will break and then you will
+simply replace it with the previous step
+where we generated the still image so
+we're going to modify that you're going
+to go into the generated image here and
+then you're going to use this ID right
+here make sure you're in between those
+two quotes so that you don't break it
+and then you're going to add that ID and
+then once you have that you can go ahead
+and click okay now we do need to run
+this because we need the output of this
+API call number one to finalize our web
+hook here and then also to finalize the
+air table update here so go ahead and
+click save and then go ahead and click
+run once and now let's go back to air
+table and just turn off the generate
+scenes automation just so we can trigger
+it manually turn that off then let's
+jump back to the data then let's jump
+back into one of our scenes here it
+doesn't really matter which one and then
+we're going to scroll down if the fields
+are hidden go ahead and there's going to
+be a button to unhide those fields go
+ahead and scroll down to where you get
+to the video API and then we're going to
+remove all three of these for one of
+these scenes here so this scene should
+be empty just like that now what that's
+going to do is it's going to set us up
+to be able to trigger it again so I'm
+going to come to generate scene videos
+and because I turned the automation off
+it's no longer going to trigger
+automatically that way I can come to the
+automation I can come back to the
+trigger I can choose the record there's
+going to be one here seven and then I'm
+going to jump to the script and I'm
+simply going to test the action this
+automation's already waiting for it here
+it comes so it's generating the still
+image which we no longer need longterm
+but we need it to create the animated
+video once it's done it's going to move
+to this path here and make the API call
+status code 200 that's good news that
+means we can now finish the process
+first I'm going to just jump over to air
+table I'm going to jump back to our new
+web hook for Leonardo video here's the
+web Hook Once that first animated video
+is complete it's going to send it to
+this new web hook that we added if I
+test the trigger still doesn't have
+anything Leonardo is going to take 20 30
+seconds to develop that video for us
+while we're waiting for that let's jump
+back and finish the automation so here
+I'm going to just simply clone the air
+table record here add it here and let's
+just double check what we have so for
+here we need to change the ID we're
+going to erase that and we are going to
+use the value that came from this
+previous step so we're going to look
+into the body here and we are going to
+grab this generation ID and put that in
+there instead and we're going to click
+okay and then we're going to click save
+and then I'm just going to jump back to
+air table looks like that record finally
+came through now so now the only problem
+is is we weren't able to add in the new
+job IDs from the new call we made here
+so when we try to set up this Automation
+and we try to look up the row like like
+we did in the previous step here where
+we do the find records we're not going
+to find it because we didn't have that
+job ID there so I'm just going to jump
+back to the scenes and clean things up a
+little bit so this is still blank
+because we were never able to associate
+data coming back from Leonardo back to
+this row here but now that we have the
+Automation and we're able to create the
+new records with that generation ID then
+we'll be able to do that so I'm going to
+go ahead and click okay again I'm going
+to make sure we save it then I'm going
+to run it again once I'm going to jump
+back to a table I'm going to jump back
+to generate scenes so here's that scene
+that we want to generate again going to
+jump to automations generate scenes make
+sure we're on the Right video again
+choose record still that seven I didn't
+really need to do that but I'm just
+going through it and I'm going to test
+it again so now this time it's going to
+generate those video images but it's
+going to write the video generation ID
+back to air table so when Leonardo sends
+us the call back information we can link
+it back up and then finally update the
+data in the scene so now you can see
+that it added the rows that's why it
+dropped out of this view here so if I
+come here we're seeing it's adding the
+rows we have two rows now so now it's
+made all three rows so if I jump back to
+air table and then we go to the
+automation the last time it ran was
+about 4 minutes ago so we need to wait
+for the new ones to come through when
+that comes through we'll see it it'll
+just say a couple seconds ago in the
+meantime I'm going to go ahead and set
+up our search we don't need to do this
+delay script on these for a technical
+reason looks looks like that came
+through here so that's good so I'm going
+to go ahead and just finish this out
+we're going to add a find record we're
+going to look up the table video API
+find records based on condition
+condition condition here we're going to
+look for job ID we're going to change
+this to is we're going to use the
+gearbox Dynamic we're going to add the
+plus we're going to go into the body and
+we're going to go into the data going to
+go into the object and we're going to
+grab that object ID we'll go ahead and
+test the action should find a record
+found a record on scene 7 as we'd expect
+now all we need to do is update that
+record here and for the record ID we're
+going to go ahead and use air table ID
+from the find records scroll down
+there's the air table record ID I didn't
+select the table here we're updating the
+scenes table so actually it's not the
+scenes it's the video API for the record
+ID we're going to use the air table ID
+that we already added for Fields we're
+going to update the video and now we
+need to find the url for the video not
+
+the image so we're going to use the web
+hook received go into the body we're
+going to jump into the data into the
+object then we're going to look for
+images to the bottom images and then
+we're looking for the motion MP4 URL
+here make sure not to grab this URL
+that's just a link to the original still
+image so make sure you grab the motion
+MP4 URL go to run as configured run test
+then you'll want to turn this automation
+on so it runs automatically the first
+time leave off this one here re jump
+back to the data notice it's gone from
+here we're going to go back to all
+scenes and now instead of there being an
+image here or three images we have one
+video which should be an animated video
+nice there it is very cool so now what
+we need to do is just come back to the
+automations turn on this automation here
+and then we should be able to run one
+final test with the animated videos
+instead of the still images and I'm just
+going to run back to the stories I'm
+going to leave these as is I'm going to
+run back to stories I'm going to create
+one new story from scratch comic news
+again I'm just going to fill this down
+so it has that and then make sure that
+the automation is on I'm going to back
+out so I can see it then I'll just come
+back here and ready to go and that
+should start to trigger the entire
+process once again starting to see the
+story generation and then the scene
+generation creating all the scenes we
+can kind of toggle back and forth here
+jump over to the scenes we've now got
+those which means that it's now going to
+trigger all of the image creation and
+then the video creation so that's
+already happening right now we probably
+have some of the videos coming back soon
+through the web hook run history this
+will be the first time that we've had it
+on where the automation actually
+populates through from the API in
+Leonardo starting to see those come
+through now starting to see those videos
+populate here as well so we're going to
+end up get having three videos per scene
+just like how we have three static
+images per scene this one now has three
+videos so it's continuing forward with
+the audio and it's going to create the
+video from Json to video if I come over
+here and refresh we should see some
+render logs looks like we did get an
+error here and I know what that is from
+so I'm going to come back to the
+Automation and I'm actually going to
+turn off the automation here because I
+know what the problem is I forgot to
+make one change in our automation so we
+changed it from static images to videos
+so we need to come to this automation
+here where we assemble individual parts
+of the scene which used to be images and
+we need to update this to video so we
+change it from image to video and then
+we need to change the duration here to
+minus one and we can go ahead and click
+okay and now everything else should work
+and we shouldn't get that same error so
+now I'm going to come back to the
+automation I'm going to go ahead and
+just clear this out going to delete
+Story 5 and we'll start again copy this
+down and now this time that I turn the
+automation back on make sure when you do
+this just delete the old data otherwise
+it's going to continue forward with some
+of those previous executions that we
+turned off and now I'm going to come
+back to air table and I'm going to go
+ahead and run that again that's why it's
+good to have this open so you can see
+the different errors if I refresh this
+there's probably other errors there as
+well here we had several errors coming
+from that and if I look here it doesn't
+really tell us what that was but I'm
+pretty sure that's what it was so come
+back over to scenes now it's generating
+the new scenes come back to the global
+view where I'm not actually editing it
+so I can see the runs that are coming
+through now it's coming through again
+and generating the still images and the
+animated videos so quite a few calls are
+going to be made here as it builds out
+all of these individual videos those are
+starting to come through as you can see
+you can open those up as they come and
+just take a look Leonardo just picks
+different types of animations sometimes
+it's a zoom sometimes it actually tries
+to animate things we now have three here
+so now it should be continuing forward
+it's creating the audio and the video
+now we shouldn't run into that same
+issue that we had before going to go
+ahead and refresh the list so now it's
+running for the first time again looks
+like now we have a success instead of an
+error so if we come back to airror table
+starting to see those videos come
+through so now we're going to see the
+rest of the audios come through the rest
+of the videos and now because we have a
+pair here it has already done a merge
+and once you continue to see the three
+parts of the scene completed it will
+continue with additional audio and video
+then you just have to wait patiently as
+all of the different assets come
+together waiting for one final video
+here and we got the final video here now
+it's going to create the final audio and
+video and that now that is complete it
+is ready for that final full video which
+should have triggered here in this view
+as well so that should be on its way in
+the automation the final it is now sent
+that to Json to video so now we just
+need to check the render log here that
+is now running so once that is finally
+finished it's going to call that final
+web hook automation Json to video full
+video it will update the row and we'll
+have that final video here in just a
+second it's always hard to wait for that
+final one to come through and there it
+is let's take a look looks like it came
+out to about a minute techsavvy burglar
+execute one of the largest cash heists
+in Los Angeles history with high-tech
+Precision understanding the
+technological prowess behind this Heist
+sheds light on emerging threats to
+Financial Security on Easter Sunday
+burglar executed a highly sophisticated
+theft at a cash storage facility in
+silar San Fernando Valley stealing up to
+$30 million The Heist which was
+meticulously planned and carried out
+without triggering alarms suggests the
+involvement of a highly skilled group
+potentially with Insider knowledge
+jointly investigated by the FBI and LAPD
+this incident has marked a significant
+breach in the operations of Garda World
+a private security firm the previous
+largest cash heist in Los Angeles
+occurred in
+1997 when $18.9 million was stolen from
+Dunbar Armored Inc stay vigilant and
+informed about advancements in security
+technology to better protect your assets
+and remain one step ahead of emerging
+threats so there you go obviously you
+can play around with the video quality
+and how you're building out these
+different prompts and the different
+models you're using to produce the type
+of content that you want and again
+remember I have the story types here so
+that you can add other story types and
+build completely different types of
+prompts and you can use different models
+and everything like that so if you don't
+like the comic book you know you can
+change it to ultra realistic photos or
+whatever you want that's all
+configurable within the story story
+types and how you generate the story and
+all of that so don't think that anything
+that I have here limits your ability to
+change the prompts and even just come
+into the Automation and just swap out
+Leonardo for a completely different
+image and video generator the real art
+to this is building the system that can
+give you the flexibility on story types
+and how to generate the story and how to
+generate the different image prompts and
+how to keep it all organized and
+scalable and to have it all just in one
+place in your air table base so again if
+you want to just be able to import those
+make blueprints so that you can skip all
+of the configuration yourself you just
+open it up and have the entire
+automation just like that and be able to
+get access to this air table base
+without having to build that out from
+scratch make sure to jump into the no
+Cod Architects the link is in the
+description below you'll be able to jump
+into the templates and get access to
+everything just like this but either way
+I hope you found that video valuable
+that was quite the video if you made it
+through to the end congratulations you
+are awesome let me know what what you
+think in the comments and I'll see you
+in the next video
